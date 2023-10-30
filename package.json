@@ -19,11 +19,13 @@
     "classnames": "^2.3.2",
     "core-js": "^2.5.7",
     "critters": "^0.0.20",
+    "from": "^0.1.7",
     "next": "13.5.4",
     "next-auth": "^4.24.3",
     "next-navigation": "^1.0.6",
     "react": "^18",
     "react-dom": "^18",
+    "session": "^0.1.0",
     "tailwindcss-filters": "^3.0.0",
     "webpack": "^5.89.0"
   },
