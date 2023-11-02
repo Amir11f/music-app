@@ -5,45 +5,23 @@ import { TopArtists, Genres, TopCharts, Player, Trending } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 import Login from '../components/LoginPage/Login'
 import {useEffect } from 'react';
-import { SessionProvider } from 'next-auth/react';
-import Component from '../components/Component'
 
 
 
-export default function Home({session , ...pagePropes}) {
+export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
-  // console.log(tokenVal)
-
-  // const searchArtists = async () => {
-  //   const {data} = await axios.get("https://api.spotify.com/v1/search", {
-  //       headers: {
-  //           Authorization: `Bearer ${tokenVal}`
-  //       },
-  //       params: {
-  //           // q: searchKey,
-  //           type: "artist"
-  //       }
-  //   })
-  //   console.log(data)
-  // }
-  // useEffect(()=>{
-  //   searchArtists()
-  // },[])
 
   return (
     <>
-    <SessionProvider session={session}>
       <main className="overflow-auto">
-        {tokenVal ? 
+        {/* {tokenVal ?  */}
           <div
             className={`flex flex-col gap-4 mt-14 px-8 pb-4 overflow-auto ${
               activeMenu && 'md:ml-72'
             }`}
           >
             <Trending />
-            <Component {...pagePropes}/>
-
             <div className=' lg:grid grid-cols-6 gap-x-6 gap-4 mt-6'>
               <TopArtists />
               <Player />
@@ -54,10 +32,8 @@ export default function Home({session , ...pagePropes}) {
             </div>
           </div>
         : <Login/>
-        }
+        {/* } */}
       </main>
-    </SessionProvider>
-
     </>
   )
 }
