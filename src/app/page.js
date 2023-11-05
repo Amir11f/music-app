@@ -5,13 +5,21 @@ import { TopArtists, Genres, TopCharts, Player, Trending } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 import Login from '../components/LoginPage/Login'
 import {useEffect } from 'react';
-
+import { headers } from '../../next.config';
 
 
 export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
 
+  async function getAccess (){
+    let res = await axios.get(`https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,zohrabiamirhossain@gmail.com`)
+  }
+
+  useEffect(()=>{
+    getAccess()
+  })
+  
   return (
     <>
       <main className="overflow-auto">
@@ -35,5 +43,6 @@ export default function Home() {
         {/* } */}
       </main>
     </>
+    
   )
 }
