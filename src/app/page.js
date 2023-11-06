@@ -12,13 +12,14 @@ export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
 
-  async function getAccess (){
-    let res = await axios.get(`https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,zohrabiamirhossain@gmail.com`)
-  }
+  // async function getAccess (){
+  //   let res = await axios.get(`https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,zohrabiamirhossain@gmail.com`)
+  //   console.log(res)
+  // }
 
-  useEffect(()=>{
-    getAccess()
-  })
+  // useEffect(()=>{
+  //   getAccess()
+  // })
   
   return (
     <>
