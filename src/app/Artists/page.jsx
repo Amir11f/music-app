@@ -5,8 +5,6 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { Artist } from '@/components';
 import Loader from '@/components/Loader/Loader';
 
-import { useStateContext } from '../contexts/ContextProvider';
-
 const Artists = (song) => {
 
   const { activeMenu, setActiveMenu } = useStateContext();
