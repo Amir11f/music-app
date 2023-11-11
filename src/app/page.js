@@ -1,6 +1,5 @@
 'use client'
 import axios from 'axios';
-import { Explora } from 'next/font/google'
 import { TopArtists, Genres, TopCharts, Player, Trending } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 import Login from '../components/LoginPage/Login'
@@ -12,14 +11,11 @@ export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
 
-  // async function getAccess (){
-  //   let res = await axios.get(`https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,zohrabiamirhossain@gmail.com`)
-  //   console.log(res)
-  // }
+  async function getData (){
+    const get1 = `https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,email`
 
-  // useEffect(()=>{
-  //   getAccess()
-  // })
+    return get1
+  }
   
   return (
     <>
@@ -30,6 +26,9 @@ export default function Home() {
               activeMenu && 'md:ml-72'
             }`}
           >
+            <bottom className='bg-red-600' onclick> 
+              aklsdfgnksjdfghskdfgfdnsghjkl
+            </bottom>
             <Trending />
             <div className=' lg:grid grid-cols-6 gap-x-6 gap-4 mt-6'>
               <TopArtists />
@@ -40,7 +39,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        : <Login/>
         {/* } */}
       </main>
     </>
