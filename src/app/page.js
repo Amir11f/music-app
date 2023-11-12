@@ -11,12 +11,6 @@ export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
 
-  async function getData (){
-    const get1 = `https://connect.deezer.com/oauth/auth.php?app_id=643701&redirect_uri=http://localhost3000&perms=basic_access,email`
-
-    return get1
-  }
-  
   return (
     <>
       <main className="overflow-auto">
@@ -26,9 +20,6 @@ export default function Home() {
               activeMenu && 'md:ml-72'
             }`}
           >
-            <bottom className='bg-red-600' onclick> 
-              aklsdfgnksjdfghskdfgfdnsghjkl
-            </bottom>
             <Trending />
             <div className=' lg:grid grid-cols-6 gap-x-6 gap-4 mt-6'>
               <TopArtists />
