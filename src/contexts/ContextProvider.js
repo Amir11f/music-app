@@ -1,7 +1,7 @@
-'use client'
-import { useState, useEffect, createContext, useContext } from 'react';
-import SampleImage from '../public/default_player_image.webp';
-import axios from 'axios';
+"use client";
+import { useState, useEffect, createContext, useContext } from "react";
+import SampleImage from "../public/default_player_image.webp";
+import axios from "axios";
 
 const StateContext = createContext();
 
@@ -9,22 +9,20 @@ const initialState = {
   notification: false,
   settings: false,
   profile: false,
-  
-  
 };
 
 export const ContextProvider = ({ children }) => {
   const [audio, setAudio] = useState(null);
   const [activeMenu, setActiveMenu] = useState(false);
   const [screenSize, setScreenSize] = useState(undefined);
-  const [tokenVal , setTokenVal] = useState()
+  const [tokenVal, setTokenVal] = useState();
   const [isClicked, setIsClicked] = useState(initialState);
   const [homePlayerToggle, setHomePlayerToggle] = useState(false);
   const [currentSong, setcurrentSong] = useState({
     image: SampleImage,
-    title: 'sample',
-    artist: 'sample',
-    song: 'smaple',
+    title: "sample",
+    artist: "sample",
+    song: "smaple",
   });
   const [topCharts, setTopCharts] = useState([]);
   const [topTrending, setTopTrending] = useState([]);
@@ -37,21 +35,21 @@ export const ContextProvider = ({ children }) => {
   // api fetch
   const getTopCharts = async () => {
     try {
-      const { data } = await axios.get('api/top/charts');
+      const { data } = await axios.get("api/top/charts");
       setTopCharts(data);
       setIsFetching(false);
     } catch (error) {
-      console.log('getTopCharts error: ', error);
+      console.log("getTopCharts error: ", error);
     }
   };
 
   const getTopTrending = async () => {
     try {
-      const { data } = await axios.get('api/top/trending');
+      const { data } = await axios.get("api/top/trending");
       setTopTrending(data);
       setIsFetching(false);
     } catch (error) {
-      console.log('getTopTrending error: ', error);
+      console.log("getTopTrending error: ", error);
     }
   };
 
@@ -59,6 +57,7 @@ export const ContextProvider = ({ children }) => {
     setIsFetching(true);
     getTopCharts();
     getTopTrending();
+    setIsFetching(false);
   }, []);
 
   return (
@@ -83,8 +82,8 @@ export const ContextProvider = ({ children }) => {
         isFetching,
         setIsFetching,
         topTrending,
-        tokenVal, 
-        setTokenVal
+        tokenVal,
+        setTokenVal,
       }}
     >
       {children}
