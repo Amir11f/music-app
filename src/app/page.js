@@ -10,12 +10,11 @@ import { headers } from '../../next.config';
 export default function Home() {
 
   const { activeMenu, tokenVal  } = useStateContext();
-
+  
   return (
     <>
       <main className="overflow-auto">
-        {/* {tokenVal ?  */}
-          <div
+          <div 
             className={`flex flex-col gap-4 mt-14 px-8 pb-4 overflow-auto ${
               activeMenu && 'md:ml-72'
             }`}
@@ -27,10 +26,9 @@ export default function Home() {
               <div className='lg:grid col-span-4 lg:grid-cols-2 xl:grid-cols-4 row-span-1 rounded-md flex flex-col gap-4 mt-2'>
                 <Genres />
                 <TopCharts />
-              </div>
+              </div >
             </div>
           </div>
-        {/* } */}
       </main>
     </>
     
