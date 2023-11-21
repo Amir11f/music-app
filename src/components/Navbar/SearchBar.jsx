@@ -24,29 +24,29 @@ function SearchBar({ placeholder, data }) {
     }
   }
 
-  const SearchBarResult = async () =>{
+//   const SearchBarResult = async () =>{
 
-    const CLIENT_ID = "4ee029ea699548c684ec63daab67fd01"
-    const REDIRECT_URI = "http://localhost:3000"
-    const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-    const RESPONSE_TYPE = "token"
+//     const CLIENT_ID = "4ee029ea699548c684ec63daab67fd01"
+//     const REDIRECT_URI = "http://localhost:3000"
+//     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
+//     const RESPONSE_TYPE = "token"
 
-    const url = `https://api.spotify.com/v1/search?q=${wordEntered}&type=album%2Cplaylist%2Ctrack&limit=20&include_external=audio`
+//     const url = `https://api.spotify.com/v1/search?q=${wordEntered}&type=album%2Cplaylist%2Ctrack&limit=20&include_external=audio`
     
-    const search = await axios.get(url ,{
-        headers : {
-            'Authorization': `${tokenVal}`
-        }
-    })
+//     const search = await axios.get(url ,{
+//         headers : {
+//             'Authorization': `${tokenVal}`
+//         }
+//     })
 
-    const get = await search.json()
-    console.log(get)
+//     const get = await search.json()
+//     console.log(get)
     
-    return get
-}
-  useEffect(()=>{
-    SearchBarResult()
-  },[])
+//     return get
+// }
+  // useEffect(()=>{
+  //   SearchBarResult()
+  // },[])
 
   return (
     <>

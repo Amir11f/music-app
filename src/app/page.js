@@ -1,5 +1,4 @@
 'use client'
-import axios from 'axios';
 import { TopArtists, Genres, TopCharts, Player, Trending } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 import Login from '../components/LoginPage/Login'

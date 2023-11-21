@@ -24,23 +24,23 @@ function Favorite({ placeholder, data }) {
     }
   }
 
-  const searchArtists = async () => {
-    const {data} = await axios.get("https://api.spotify.com/v1/search", {
-        headers: {
-            Authorization: `Bearer ${tokenVal}`
-        },
-        params: {
-            q: searchKey,
-            type: "artist"
-        }
-    })
+//   const searchArtists = async () => {
+//     const {data} = await axios.get("https://api.spotify.com/v1/search", {
+//         headers: {
+//             Authorization: `Bearer ${tokenVal}`
+//         },
+//         params: {
+//             q: searchKey,
+//             type: "artist"
+//         }
+//     })
 
-    setArtists(data.artists.items)
-    console.log(data)
-}
-  useEffect(()=>{
-    searchArtists()
-  },[])
+//     setArtists(data.artists.items)
+//     console.log(data)
+// }
+//   useEffect(()=>{
+//     searchArtists()
+//   },[])
 
   return (
     <>

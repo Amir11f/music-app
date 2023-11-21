@@ -46,20 +46,20 @@ function Login() {
         window.localStorage.removeItem("token")
     }
 
-    const searchArtists = async (e) => {
-        e.preventDefault()
-        const {data} = await axios.get("https://api.spotify.com/v1/search", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            params: {
-                q: searchKey,
-                type: "artist"
-            }
-        })
+    // const searchArtists = async (e) => {
+    //     e.preventDefault()
+    //     const {data} = await axios.get("https://api.spotify.com/v1/search", {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         },
+    //         params: {
+    //             q: searchKey,
+    //             type: "artist"
+    //         }
+    //     })
 
-        setArtists(data.artists.items)
-    }
+    //     setArtists(data.artists.items)
+    // }
 
 
     console.log(token)

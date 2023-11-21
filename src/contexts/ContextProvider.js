@@ -33,30 +33,30 @@ export const ContextProvider = ({ children }) => {
   };
 
   // api fetch
-  const getTopCharts = async () => {
-    try {
-      const { data } = await axios.get("api/top/charts");
-      setTopCharts(data);
-      setIsFetching(false);
-    } catch (error) {
-      console.log("getTopCharts error: ", error);
-    }
-  };
+  // const getTopCharts = async () => {
+  //   try {
+  //     const { data } = await axios.get("api/top/charts");
+  //     setTopCharts(data);
+  //     setIsFetching(false);
+  //   } catch (error) {
+  //     console.log("getTopCharts error: ", error);
+  //   }
+  // };
 
-  const getTopTrending = async () => {
-    try {
-      const { data } = await axios.get("api/top/trending");
-      setTopTrending(data);
-      setIsFetching(false);
-    } catch (error) {
-      console.log("getTopTrending error: ", error);
-    }
-  };
+  // const getTopTrending = async () => {
+  //   try {
+  //     const { data } = await axios.get("api/top/trending");
+  //     setTopTrending(data);
+  //     setIsFetching(false);
+  //   } catch (error) {
+  //     console.log("getTopTrending error: ", error);
+  //   }
+  // };
 
   useEffect(() => {
     setIsFetching(true);
-    getTopCharts();
-    getTopTrending();
+    // getTopCharts();
+    // getTopTrending();
     setIsFetching(false);
   }, []);
 
